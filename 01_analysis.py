@@ -7,7 +7,7 @@ import os
 from scipy.stats import spearmanr 
 
 ## 2. Carga y exploración del dataset
-metadata = pd.read_csv(".../atacama-soil-microbiome/data/raw/sample_metadata.tsv", sep="\t", index_col=0, skiprows=[1])
+metadata = pd.read_csv("../data/raw/sample_metadata.tsv", ...)
 print(metadata.shape)
 print(metadata.head())
 
@@ -20,7 +20,7 @@ print(f"Elevazione — min: {metadata['elevation'].min()}m, max: {metadata['elev
 print(f"Umidità    — min: {metadata['humidity'].min():.2f}%, max: {metadata['humidity'].max():.2f}%")
 
 ## 4. Creamos grafica de distribución de muestras
-os.makedirs('.../atacama-soil-microbiome/results/figures', exist_ok= True)
+os.makedirs('../results/figures', exist_ok=True)
 
 fig,axes = plt.subplots(1, 2, figsize = (12,4))
 axes[0].hist(metadata['elevation'], bins=15, color='steelblue', edgecolor='white')
@@ -34,7 +34,7 @@ axes[1].set_ylabel('Numero muestras')
 axes[1].set_title('Distribución muestras por humedad')
 
 plt.tight_layout()
-plt.savefig('.../atacama-soil-microbiome/results/figures/sample_distribution.png', dpi=150, bbox_inches='tight')
+plt.savefig('../results/figures/sample_distribution.png', ...)
 plt.show()
 
 ## 5. Creamos grafica de correlación elevación — humedad
@@ -49,7 +49,7 @@ ax.set_ylabel("Humedad media suelo (%)", fontsize = 12)
 ax.set_title(f"Elevación vs Humedad - Atacama Desert\nSpearman r = {r:.2f}, p= {p:.4f}", fontsize = 13)
 
 plt.tight_layout()
-plt.savefig('.../atacama-soil-microbiome/results/figures/Comparación.png', dpi = 150, bbox_inches = 'tight')
+plt.savefig('../results/figures/Comparacion.png', ...)
 plt.show()
 
 print(f"Correlazione di Spearman r = {r:.2f}, p = {p:.4f}")
