@@ -25,6 +25,9 @@ A mayor elevación, mayor humedad del suelo. Este gradiente ambiental
 es el principal factor que estructura las comunidades microbianas 
 descritas en el estudio original.
 
+## Resultados
+
+
 ## Datos
 
 Dataset público de QIIME 2:  
