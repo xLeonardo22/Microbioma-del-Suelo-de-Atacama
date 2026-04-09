@@ -3,6 +3,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
+from scipy.stats import spearmanr 
 
 ## 2. Carga y exploración del dataset
 metadata = pd.read_csv(".../atacama-soil-microbiome/data/raw/sample_metadata.tsv", sep="\t", index_col=0, skiprows=[1])
@@ -18,7 +20,6 @@ print(f"Elevazione — min: {metadata['elevation'].min()}m, max: {metadata['elev
 print(f"Umidità    — min: {metadata['humidity'].min():.2f}%, max: {metadata['humidity'].max():.2f}%")
 
 ## 4. Creamos grafica de distribución de muestras
-import os
 os.makedirs('.../atacama-soil-microbiome/results/figures', exist_ok= True)
 
 fig,axes = plt.subplots(1, 2, figsize = (12,4))
@@ -37,8 +38,6 @@ plt.savefig('.../atacama-soil-microbiome/results/figures/sample_distribution.png
 plt.show()
 
 ## 5. Creamos grafica de correlación elevación — humedad
-from scipy.stats import spearmanr
-
 r, p = spearmanr(metadata['elevation'], metadata['humidity'])
 fig, ax = plt.subplots(figsize = (8, 6))
 scatter = ax.scatter(metadata['elevation'], metadata['humidity'],
