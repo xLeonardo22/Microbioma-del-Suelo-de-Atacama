@@ -27,6 +27,9 @@ descritas en el estudio original.
 
 ## Resultados
 
+![Distribución de muestras](results/figures/sample_distribution.png)
+
+![Correlación elevación-humedad](results/figures/Comparacion.png)
 
 ## Datos
 
