@@ -7,7 +7,7 @@ import os
 from scipy.stats import spearmanr 
 
 ## 2. Carga y exploración del dataset
-metadata = pd.read_csv("../data/raw/sample_metadata.tsv", ...)
+metadata = pd.read_csv("../data/raw/sample_metadata.tsv", sep="\t", index_col=0, skiprows=[1])
 print(metadata.shape)
 print(metadata.head())
 
@@ -34,7 +34,7 @@ axes[1].set_ylabel('Numero muestras')
 axes[1].set_title('Distribución muestras por humedad')
 
 plt.tight_layout()
-plt.savefig('../results/figures/sample_distribution.png', ...)
+plt.savefig('../results/figures/sample_distribution.png', dpi=150, bbox_inches='tight')
 plt.show()
 
 ## 5. Creamos grafica de correlación elevación — humedad
@@ -49,7 +49,7 @@ ax.set_ylabel("Humedad media suelo (%)", fontsize = 12)
 ax.set_title(f"Elevación vs Humedad - Atacama Desert\nSpearman r = {r:.2f}, p= {p:.4f}", fontsize = 13)
 
 plt.tight_layout()
-plt.savefig('../results/figures/Comparacion.png', ...)
+plt.savefig('../results/figures/Comparacion.png', dpi=150, bbox_inches='tight')
 plt.show()
 
 print(f"Correlazione di Spearman r = {r:.2f}, p = {p:.4f}")
